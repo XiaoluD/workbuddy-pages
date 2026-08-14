@@ -10,11 +10,15 @@
   .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 24px; text-align: center; }
   .header h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
   .header p { font-size: 16px; opacity: 0.85; }
+  .notice { max-width: 680px; margin: 16px auto 0; padding: 12px 16px; background: #fff7ed; border: 1px solid #fed7aa; border-radius: 10px; color: #9a3412; font-size: 13px; line-height: 1.6; }
   .container { max-width: 680px; margin: 0 auto; padding: 24px; }
   .card { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border-left: 4px solid #667eea; }
   .card h2 { font-size: 18px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px; }
-  .card p { font-size: 16px; line-height: 1.7; color: #555; margin-bottom: 4px; }
+  .card p { font-size: 15px; line-height: 1.7; color: #555; margin-bottom: 6px; }
+  .card ul { margin: 6px 0 4px 18px; }
+  .card li { font-size: 15px; line-height: 1.7; color: #555; margin-bottom: 4px; }
   .tag { display: inline-block; background: #eef0ff; color: #667eea; padding: 2px 10px; border-radius: 12px; font-size: 13px; margin-right: 6px; margin-bottom: 6px; }
+  .src { font-size: 12px; color: #999; margin-top: 8px; }
   .footer { text-align: center; padding: 24px; color: #aaa; font-size: 13px; }
 </style>
 </head>
@@ -25,18 +29,68 @@
   <p>2026 年 8 月 13 日 · 星期四</p>
 </div>
 
+<div class="notice">
+  ⚠️ 说明：本日原始自动总结因对话检索索引未收录 8/13 的会话（与已知的跨端/跨会话记忆分离同类问题），一度误报"无对话记录"。以下内容已根据本地工作区实际产出重新还原，非凭空生成。
+</div>
+
 <div class="container">
 
   <div class="card">
-    <span class="tag">无对话</span>
-    <h2>昨日无对话记录</h2>
-    <p>2026-08-13 未检索到用户与 WorkBuddy 之间的对话记录，当日无新话题、新任务或新决策产出。</p>
+    <span class="tag">武汉买房</span>
+    <h2>常青花园学区房 · 多小区成交核验</h2>
+    <p>对常青花园多个小区完成贝壳成交数据的提取、核验与修正，产出 HTML/PDF 并归档腾讯文档：</p>
+    <ul>
+      <li><b>三区</b>：88.87㎡ 2室2厅房源初步分析</li>
+      <li><b>十一小区</b>：步梯房 / 电梯房「最近一年成交」核验修正版</li>
+      <li><b>十三区</b>：三房低中楼层、同户型低楼层汇总（修正版）</li>
+      <li><b>四小区</b>：成交核验（数据持续到 8/14 上午仍在更新）</li>
+    </ul>
+    <p class="src">数据来源：贝壳（2026-08-13 查询） · 交付：本地 HTML/PDF + 腾讯文档「1.武汉买房」</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">方法论</span>
+    <h2>同户型严格对比口径收敛</h2>
+    <p>用户要求将"同户型"从跨小区（混入党大御景/越秀逸府等 8 个小区）收紧到<b>同小区</b>。以十一小区参考房 <b>104114745015</b>（122.25㎡，153万，中楼层 3/7，精装，南北向）为基准，按「同小区 + 同户型(3室2厅2卫) + 面积±1%(121.03–123.47㎡) + 低中楼层」重筛：</p>
+    <ul>
+      <li>真·同户型仅命中 <b>3 套</b>（含参考房）</li>
+      <li>参考房性价比最高：总价 153万最低、单价 12515 元/㎡最低、得房率 86% 最高、刚降 37万、近 7 天带看 13 次最热</li>
+      <li>严格可比成交锚点仅 <b>1 套</b>：122.89㎡ 成交 143万（2025.05），面积误差 0.52%；房东心理价约 140万</li>
+    </ul>
+    <p class="src">沉淀规则：用户说"同户型"默认先收紧到同小区；跨小区只能叫"同面积段三房"，须明示布局可能不同。</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">武汉买房</span>
+    <h2>白沙嘉序新盘风险研判</h2>
+    <p>对洪山白沙洲新盘「武汉城建·白沙嘉序」做分析，核心结论：</p>
+    <ul>
+      <li><b>学区未定</b>为最大风险——新盘划片官方未确定，贝壳返回 0 条；周边学校仅物理距离、非对口关系</li>
+      <li><b>价格/产品参数待定</b>：总价、户型、户数、车位、燃气系统均未披露</li>
+      <li><b>板块流动性弱</b>：白沙洲在售 5690 套、成交周期 268.5 天、二手均价 0.77 万/㎡ 环比 -3.93%，典型买方市场</li>
+      <li>若以 2028 年入学锁定学区为目标，当前风险偏高，建议先核验学区与价格再决策</li>
+    </ul>
+    <p class="src">数据来源：贝壳（2026-08-13） · 结论须以交付当年官方划片公告为准</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">工程</span>
+    <h2>贝壳成交数据提取管线 QA 审查</h2>
+    <p>产出《QA审查报告_贝壳成交数据提取管线》，对成交数据抓取/解析/核验链路做质量门禁审查，建立可复用的数据管线校验规则，避免后续报告被脏数据误导。</p>
+    <p class="src">交付：QA审查报告 Markdown（daily-summary 工作区 2026-08-13-07-42-07）</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">资料库</span>
+    <h2>IMA 知识库盘点</h2>
+    <p>梳理腾讯 IMA 知识库清单，共 <b>23 个库</b>：个人 1 / 共享 9 / 我发布 2 / 我加入 11；其中用户拥有并可写入（role_type=10000）的共 <b>6 个</b>，用于后续投研/AI 资料沉淀。</p>
+    <p class="src">交付：IMA知识库清单.md（2026-08-13-08-15-32）</p>
   </div>
 
 </div>
 
 <div class="footer">
-  由 WorkBuddy 自动生成 · 每日 8:00
+  由 WorkBuddy 自动生成 · 每日 8:00 · 本版为本地工作区还原版
 </div>
 
 </body>
