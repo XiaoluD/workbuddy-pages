@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日总结 - 2026-08-15</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f5f7; color: #1d1d1f; }
+  .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 24px; text-align: center; }
+  .header h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+  .header p { font-size: 16px; opacity: 0.85; }
+  .notice { max-width: 680px; margin: 16px auto 0; padding: 12px 16px; background: #fff7ed; border: 1px solid #fed7aa; border-radius: 10px; color: #9a3412; font-size: 13px; line-height: 1.6; }
+  .container { max-width: 680px; margin: 0 auto; padding: 24px; }
+  .card { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border-left: 4px solid #667eea; }
+  .card h2 { font-size: 18px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px; }
+  .card p { font-size: 15px; line-height: 1.7; color: #555; margin-bottom: 6px; }
+  .card ul { margin: 6px 0 4px 18px; }
+  .card li { font-size: 15px; line-height: 1.7; color: #555; margin-bottom: 4px; }
+  .tag { display: inline-block; background: #eef0ff; color: #667eea; padding: 2px 10px; border-radius: 12px; font-size: 13px; margin-right: 6px; margin-bottom: 6px; }
+  .src { font-size: 12px; color: #999; margin-top: 8px; }
+  .footer { text-align: center; padding: 24px; color: #aaa; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>每日对话总结</h1>
+  <p>2026 年 8 月 15 日 · 星期六</p>
+</div>
+
+<div class="notice">
+  ⚠️ 说明：本日原始自动总结因对话检索索引未收录 8/15 的会话，以下内容根据本地工作区实际产出（2026-08-15-* 工作区 memory 日志与交付文件）还原，非凭空生成。
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <span class="tag">贝壳风控</span>
+    <span class="tag">工程</span>
+    <h2>贝壳 Key 风控加固 · 三账号密钥池落地</h2>
+    <p>围绕贝壳账户级固定 Key 的防封诉求，完成一套完整加固动作：</p>
+    <ul>
+      <li><b>交付武汉专项 v2 采集器</b>（价格单轴分片 + 持久缓存 + 增量刷新，为保护 Key 未实际运行）</li>
+      <li><b>多账号密钥池落地</b>：3 个不同手机号账号 Key 收编进池，实现 failover + 调用量分摊</li>
+      <li><b>原被封账号复活</b>：8-14 的封禁实为 time-boxed 软限流（~1 天可恢复），已重新签发新 Key</li>
+      <li><b>发现官方原生工具集</b>：tools/list 暴露 29 个原生工具（house_sold_search / entity_detail / school_district_search / market_trend_search / maps_* 等），远比逆向解析的文本块合规</li>
+    </ul>
+    <p class="src">交付：beike_wuhan_collector_v2.py + 贝壳Key防封与查询安全指南.md + key_pool.json（3 账号）</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">工具契约</span>
+    <span class="tag">方法论</span>
+    <h2>贝壳 29 工具返回字段契约表 + 调用量跟踪层</h2>
+    <p>把"不知道用哪个命令、试错换命令"的问题从根上解决：</p>
+    <ul>
+      <li>澄清需求：要的是<b>接口契约注册表</b>（需求→字段→命令路由），非数据仓库</li>
+      <li>完成 17 个工具样本探针（一/二/四/九节全 ✅），剩余 12 工具走增量回填</li>
+      <li>固化增量回填 SOP：写入 MEMORY.md + 沉淀为可复用 skill「beike-field-contract」双保险</li>
+      <li>落地调用量跟踪层 beike_track.py（单次/当天/当月计数 + p99 + 红线被动揣测）</li>
+    </ul>
+    <p class="src">交付：贝壳工具返回字段契约表.md + beike_track.py + beike_call_log.jsonl</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">武汉买房</span>
+    <span class="tag">主线</span>
+    <h2>光谷东四小区购房者分析报告（全天主线）</h2>
+    <p>以购房者视角完成四份单小区深度分析，并产出四小区横评对比报告：</p>
+    <ul>
+      <li><b>万科城市花园（北路）</b>：04-08 建 / 3899 户 / 对口光谷二小 + 光谷实验中学</li>
+      <li><b>当代国际花园</b>：实为 5 个独立分期（铂公馆/四期/一二三期，合 6326 户 117 栋），须分期抓取</li>
+      <li><b>万科红郡</b>：即万科城市花园南区，含叠拼别墅，全量成交 291 条</li>
+      <li><b>现代森林小镇</b>：贝壳登记名，对口同为光谷二小 + 光谷实验，四小区<b>学区零差异</b></li>
+      <li><b>横评报告</b>：6 张可视化（3 张价格折线 + 3 张成交量柱状 + 1 张 8 维雷达）</li>
+    </ul>
+    <p class="src">交付：4 份 *_购房分析.html + 光谷东四小区_购房对比分析.html</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">数据修正</span>
+    <h2>成交数据三处关键修正 + 补齐至 100 条</h2>
+    <p>迭代中修复多处数据口径问题，最终四小区成交均补齐至最近 100 条：</p>
+    <ul>
+      <li><b>高价位漏抓</b>：旧版 DFS 预算被低价带耗尽，万科红郡真实 291 条（78~600 万）旧版只抓到 46 条两房，改 FIFO 分片后恢复</li>
+      <li><b>地铁/公交错位</b>：贝壳交通列表顺序不定，改关键词归类</li>
+      <li><b>户型数误读</b>：「总户型数」实为记录条数非设计户型种数</li>
+      <li><b>总楼层缺失</b>：sold 只回楼层类别，按房源 ID 批量 detail 回填「单元总楼层」</li>
+    </ul>
+    <p class="src">成果：万科城市花园 480 套 / 红郡 291 / 森林小镇 303 / 当代 450，各取最近 100 条</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">归档</span>
+    <span class="tag">工程</span>
+    <h2>报告 HTML→PDF → 腾讯文档归档</h2>
+    <p>四小区报告 + 对比报告全部转 PDF 并上传腾讯文档「02.武汉买房 / 【二手】光谷东」：</p>
+    <ul>
+      <li><b>ECharts 图表 PDF 空问题</b>：矢量路径在腾讯文档 viewer 渲染不全，终极方案改用 Playwright 全页位图截图 → 切分 A4 → 合成位图 PDF</li>
+      <li>对比报告 PDF（5 页，图表全部可见）已上传替换旧空图表版本</li>
+      <li>目录现有 10 项（四小区 8 份 + 对比报告 2 份，无重复）</li>
+    </ul>
+    <p class="src">交付：4 份报告 PDF + 光谷东四小区_购房对比分析.pdf（位图版）</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">叙事</span>
+    <h2>房产数据探险记（第一人称长文）</h2>
+    <p>把两天的贝壳数据工作写成可读性强的第一人称叙事文章，并据用户纠错修正事实：</p>
+    <ul>
+      <li>起点是常青花园（8-13 已开始，跨武汉 + 广州多天），非「两天」</li>
+      <li>Key 被封发生在 8-14 抓常青花园/广州万科海上明月时，非「挖得兴起时被封」</li>
+      <li>关键数字全部取自日志与落盘 JSON（万科月均 4.7 套 vs 当代 14.3 套 ≈ 3 倍）</li>
+    </ul>
+    <p class="src">交付：贝壳房产数据探险记.html（博客风长文 + 数据卡片 + 时间线）</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">工具</span>
+    <h2>DeepSeek dsh CLI 安装 + 孤儿锁 bug 修复</h2>
+    <p>安装 DeepSeek 官方 dsh CLI（web 模式），并修复一个 rc 版孤儿锁 bug：</p>
+    <ul>
+      <li>安装 @deepseek-ai/dsh@0.1.0-rc.6（web 模式监听 127.0.0.1:3080）</li>
+      <li>「内测声明」点继续报错根因：settings 写入的 withFileLock 孤儿锁残留（已死子进程 PID）</li>
+      <li>修复：给 withFileLock 加孤儿锁自愈（EEXIST 时确认 PID 已死则 rm 重试）</li>
+    </ul>
+    <p class="src">交付：dsh 安装 + node_modules 补丁（重装需重打）</p>
+  </div>
+
+</div>
+
+<div class="footer">
+  由 WorkBuddy 自动生成 · 每日 8:00 · 本版为本地工作区还原版
+</div>
+
+</body>
+</html>
