@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日总结 - 2026-08-20</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f5f7; color: #1d1d1f; }
+  .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 24px; text-align: center; }
+  .header h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+  .header p { font-size: 16px; opacity: 0.85; }
+  .notice { max-width: 680px; margin: 16px auto 0; padding: 12px 16px; background: #fff7ed; border: 1px solid #fed7aa; border-radius: 10px; color: #9a3412; font-size: 13px; line-height: 1.6; }
+  .container { max-width: 680px; margin: 0 auto; padding: 24px; }
+  .card { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border-left: 4px solid #667eea; }
+  .card h2 { font-size: 18px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px; }
+  .card p { font-size: 15px; line-height: 1.7; color: #555; margin-bottom: 6px; }
+  .card ul { margin: 6px 0 4px 18px; }
+  .card li { font-size: 15px; line-height: 1.7; color: #555; margin-bottom: 4px; }
+  .tag { display: inline-block; background: #eef0ff; color: #667eea; padding: 2px 10px; border-radius: 12px; font-size: 13px; margin-right: 6px; margin-bottom: 6px; }
+  .src { font-size: 12px; color: #999; margin-top: 8px; }
+  .footer { text-align: center; padding: 24px; color: #aaa; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>每日对话总结</h1>
+  <p>2026 年 8 月 20 日 · 星期四</p>
+</div>
+
+<div class="notice">
+  ⚠️ 说明：本日原始自动总结因对话检索索引未收录 8/20 的会话，以下内容根据本地工作区实际产出（memory 日志 + 交付文件）还原，非凭空生成。
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <span class="tag">自动化</span>
+    <span class="tag">运维</span>
+    <span class="tag">主线</span>
+    <h2>jc-signer 签到状态核查 + 阿里云 ECS 运维收口</h2>
+    <p>对江宸天街自动签到做了一次「登机实测」级状态核查，并收口阿里云服务器登录信息：</p>
+    <ul>
+      <li><b>签到主力确认正常</b>：云服务器 09:00 cron 连续三天成功（8/18、8/19、8/20），8/20 09:08 领 10 积分</li>
+      <li><b>三路架构最终定案</b>：GitHub Actions 定时暂停 + Mac launchd 暂停，云服务器 09:00 cron 为唯一主力，旧「本地 vs Actions」A/B 弃用</li>
+      <li><b>纠正误判</b>：Mac 本地 08:13 报 Token 过期，系本地独立拷贝过期（与云端不同步），不影响主力，无需修 token</li>
+      <li><b>仓库可见性修正</b>：jc-signer 实为私有仓库（公开 API 查 runs 返回 404）</li>
+      <li><b>SSH 端口迁移完成</b>：22 → 10086（双端口验证 + ufw + fail2ban），已关闭 22</li>
+      <li><b>备份仓改名</b>：XiaoluD/workbuddy-backup → workbuddy-memory-backup；并纠正「iithink88 非用户账号，远端在 XiaoluD 下」</li>
+    </ul>
+    <p class="src">交付：云服务器登录信息汇总.md（IP/端口/别名/实测状态，明文密码已移除）</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">武汉买房</span>
+    <span class="tag">学区</span>
+    <span class="tag">风险</span>
+    <h2>星科缦庭新盘评估（星悦城七期 · 江岸区后湖）</h2>
+    <p>用贝壳 + 知乎 CLI 做新盘穿透评估，结论偏负面：</p>
+    <ul>
+      <li><b>基本盘</b>：待预售（2026 底–2027 初首开），毛坯预估 14500–17000 元/㎡，交房约 2029</li>
+      <li><b>学区硬伤</b>：实验博雅第二小学 → 实验初级中学塔子湖校区（2025 普高率 52.42%，江岸区垫底/三梯队）</li>
+      <li><b>负面实锤</b>：开发商私自调规（城市留言板官方确认未充分通知六期业主）+ 偷换合同 + 物业先交一年才给钥匙 + 煤气管道不通</li>
+      <li><b>致命时间线</b>：交房约 2029 vs 孩子 2028 入学 → 该新房对 2028 入学无意义</li>
+      <li><b>开发商主体核查</b>：星科地产（湖北星海集团），「三合集团接手」传闻经官方多源核实不实（三合为渠道/包销方）</li>
+    </ul>
+    <p class="src">交付：【新房】星科缦庭_学区升学深度分析.html</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">学历提升</span>
+    <span class="tag">学习</span>
+    <h2>四川小自考 10 月统考备考计划（钢人回合一修正）</h2>
+    <p>梳理计算机专业 10 月统考课表，经钢人论证纠正一处关键误判后定稿：</p>
+    <ul>
+      <li><b>10 月统考 4 科</b>：马原(15044) / 高程(13013) / 操作系统(13180) / 计算机系统原理(13015)，<b>全部无过程性加分，60 分硬考</b></li>
+      <li><b>钢人纠偏</b>：曾混淆「全专业总课表」与「本专业固定课表」，确认 10 月只能报这 4 科，方案 A（4 科硬考）为唯一可行方案</li>
+      <li><b>红字警告</b>：统考在当地考因转成绩会延半年，最终选去四川考</li>
+      <li><b>完全避数学</b>：高数/离散用选考组（09097+03298+02117=16 学分）替代</li>
+      <li><b>用户确认</b>：方案 A + 去四川考 + 每天 1 小时；55h 可用，系统原理 17h / 操作系统 15h / 马原 12h / 高程 11h</li>
+    </ul>
+    <p class="src">交付：自考备考计划-2026年10月统考.html（9.5 周逐周计划 + 4 科官方教材 + 每日节奏模板）</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">零散咨询</span>
+    <h2>其他略记：学区 + 家庭网络 MAC 识别</h2>
+    <ul>
+      <li><b>学区</b>：华苑小学（江汉区三梯队）+ 新华下路中学（第三梯队边界），两校不构成对口链</li>
+      <li><b>家庭网络</b>：锐捷 RG-MA3066 路由 + 华硕/TP-Link/随机 MAC 终端，均为自家设备，无蹭网</li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="footer">
+  由 WorkBuddy 自动生成 · 每日 8:00 · 本版为本地工作区还原版
+</div>
+
+</body>
+</html>
