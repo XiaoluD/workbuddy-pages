@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日总结 - 2026-08-22</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f5f7; color: #1d1d1f; }
+  .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 24px; text-align: center; }
+  .header h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+  .header p { font-size: 16px; opacity: 0.85; }
+  .notice { max-width: 680px; margin: 16px auto 0; padding: 12px 16px; background: #fff7ed; border: 1px solid #fed7aa; border-radius: 10px; color: #9a3412; font-size: 13px; line-height: 1.6; }
+  .container { max-width: 680px; margin: 0 auto; padding: 24px; }
+  .card { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border-left: 4px solid #667eea; }
+  .card h2 { font-size: 18px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px; }
+  .card p { font-size: 15px; line-height: 1.7; color: #555; margin-bottom: 6px; }
+  .card ul { margin: 6px 0 4px 18px; }
+  .card li { font-size: 15px; line-height: 1.7; color: #555; margin-bottom: 4px; }
+  .tag { display: inline-block; background: #eef0ff; color: #667eea; padding: 2px 10px; border-radius: 12px; font-size: 13px; margin-right: 6px; margin-bottom: 6px; }
+  .src { font-size: 12px; color: #999; margin-top: 8px; }
+  .footer { text-align: center; padding: 24px; color: #aaa; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>每日对话总结</h1>
+  <p>2026 年 8 月 22 日 · 星期六</p>
+</div>
+
+<div class="notice">
+  ⚠️ 说明：本日原始自动总结因对话检索索引未收录 8/22 的会话，以下内容根据本地工作区实际产出（memory 日志 + 交付文件）还原，非凭空生成。
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <span class="tag">学历提升</span>
+    <span class="tag">自考</span>
+    <h2>13180《操作系统》答案 OCR 全量校验</h2>
+    <p>上一会话 Read 工具对答案图片返回 "Content filtered" 却误判可读、改错了 2 题（Q1 A→C、Q7 C→B）。本次改用 tesseract OCR 全量复核：</p>
+    <ul>
+      <li><b>方法</b>：brew 安装 tesseract + pytesseract，灰度 + 2x 放大 + 锐化，多 PSM 模式（两列布局答案需 psm 11 单列模式）</li>
+      <li><b>结果</b>：3 套卷共修正 4 处 —— 2024-10 回改 2 处（Q1/Q7），2026-04 修正 2 处（Q18 B→A、Q19 A→B），2025-04 全部一致</li>
+      <li><b>信源</b>：OCR + 02323 交叉验证 + 教材逻辑三重校验，60 题单选答案 ✅ 全部定稿</li>
+    </ul>
+    <p class="src">产出：ans_official.py + taitai_current.html 台账 + 13180_qbank.json（134 题）已同步服务器</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">学历提升</span>
+    <span class="tag">自考</span>
+    <span class="tag">题库对比</span>
+    <h2>自考题库交叉对比（02323 / 02325 / 02326 × 13180）</h2>
+    <p>连续完成三组跨课程题库对比，并做了关键课程代码更正：</p>
+    <ul>
+      <li><b>重要更正</b>：13180 的前身是 <b>02326《操作系统》</b>，不是 02323《操作系统概论》（此前基于 02323 的对比结论作废）</li>
+      <li><b>02326×13180</b>：原题重现率 &lt;1%（字面一致仅 1 题）、文字相似度 ~15%、母题/考点重复率 40-50% → 全新考试体系，但考点有延续</li>
+      <li><b>02325×13015</b>：约 40% 考点重叠（存储/数据表示/I/O），60% 不考（流水线/多处理机/并行），13015 新增 30%（可执行文件生成）</li>
+      <li><b>02326 自身</b>：严格匹配 &lt;1%、放宽 ~15%，但考点重复率很高 —— 10 类母题模板反复用，换数字换算法名</li>
+    </ul>
+    <p class="src">产出：02326_vs_13180_report.html + 02325_vs_13180_compare.html 等多份对比报告，已上传 wusi321.top</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">学历提升</span>
+    <span class="tag">自考</span>
+    <span class="tag">备考</span>
+    <h2>2026 年 10 月统考 4 科备考策略定稿</h2>
+    <p>基于题库分析敲定 4 科备考重心与时间分配：</p>
+    <ul>
+      <li><b>10/24</b>：15044 马原（易）+ 13013 高级语言程序设计（易）—— 常规备考</li>
+      <li><b>10/25</b>：13180 操作系统（中，新改版）+ 13015 计算机系统原理（难，2023 新教材/RISC-V）—— 重点</li>
+      <li><b>结论</b>：新改版课程原题重现率 &lt;1%，押题价值极低，备考须从「刷原题」转向「掌握母题解法 + 理解知识点」</li>
+      <li><b>风险点</b>：13015 系统原理是最大翻车点，分配最多时间（17h），计算题必须动手练</li>
+    </ul>
+    <p class="src">产出：备考策略要点 + 章节热力图，已固化到备考网页</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">学历提升</span>
+    <span class="tag">前端</span>
+    <span class="tag">部署</span>
+    <h2>备考网页：章节热力图 + 移动端优化 + 链接修复</h2>
+    <p>围绕 13015 / 13180 备考站点（wusi321.top）做了连续优化：</p>
+    <ul>
+      <li><b>章节热力图</b>：以章节为横轴，纳入大纲重点数/难点数 + 真题分值占比（13180 进程管理占 42.3% 持续上升，为绝对核心）</li>
+      <li><b>移动端优化</b>：768px/480px 断点响应式，触控目标 44×44px，卡片改单列</li>
+      <li><b>链接修复</b>：13015 PDF 链接「六章合订→五章合订」改名 404 修复；「02325 vs 13180→13015」文案纠正</li>
+      <li><b>验证</b>：HTTPS + Host 头测试全部 200，PDF 2.9MB 可下载</li>
+    </ul>
+    <p class="src">产出：heatmap_13015.html / heatmap_13180.html 等，同步 /var/www/wusi321.top/</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">自动化</span>
+    <span class="tag">运维</span>
+    <h2>WorkBuddy 每日签到迁移云服务器</h2>
+    <p>签到执行架构从 Mac 本地迁移到云服务器（与 jc-signer 同模式）：</p>
+    <ul>
+      <li><b>变更</b>：本地 automation 已暂停（PAUSED），改云服务器 /root/workbuddy-checkin/checkin.py + run_checkin.sh</li>
+      <li><b>调度</b>：cron 5 10 * * *（每天 10:05 + 0~600s 随机延迟），Server酱推送失败通知</li>
+      <li><b>幂等</b>：code=10001 = 今日已签到；7 天循环 1600 分/周期（前 6 天各 100，第 7 天 1000）；token 约 60 天自动刷新</li>
+      <li><b>SOP</b>：wusi321-automation §4.7 已重写，含 token 一键 scp 同步脚本</li>
+    </ul>
+    <p class="src">产出：checkin.py / run_checkin.sh / sync_wb_token.sh + SOP 更新</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">运维</span>
+    <span class="tag">调试</span>
+    <h2>GLM5.2 frp 隧道调试（延续 8/21）</h2>
+    <p>WorkBuddy 通过 frp 调用对端 GLM5.2 时出现间歇性 400/502：</p>
+    <ul>
+      <li><b>根因</b>：① 对方 frpc 偶发掉线超时 ② WorkBuddy 内部缓存一致性（重启后首轮通、次轮炸）</li>
+      <li><b>处置</b>：:8001 代理抓包方案停用（ufw/沙箱限制，内部 200 公网 502），URL 改回 :8000 直连 frps，链路恢复</li>
+      <li><b>待续</b>：多轮对话 400 需对方在 new-api 后台查拒绝日志</li>
+    </ul>
+    <p class="src">产出：frp 链路排查结论（无交付文件）</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">工具链</span>
+    <span class="tag">Skill</span>
+    <h2>Marketplace Skill 批量安装（6 个）</h2>
+    <p>上次会话 403 Free quota 配额已恢复，6 个 skill 全部安装成功：</p>
+    <ul>
+      <li>local-whisper（本地语音转文字）、tl_video_downloader（短视频下载器）、web-search（Exa 网络搜索）</li>
+      <li>Skill Scanner（朱雀实验室安全扫描）、find-skills（已是内置免装）、frontend-design（前端开发 frontend-dev）</li>
+      <li>同名缺失的按功能映射并经用户确认后安装</li>
+    </ul>
+    <p class="src">产出：6 个 skill 落位 ~/.workbuddy/skills/</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">工具链</span>
+    <span class="tag">内容</span>
+    <h2>Content Hunter 内容捕手安装演示</h2>
+    <p>安装 content-hunter（v1.1.0，支持小红书/抖音/B站热门内容抓取）并跑通演示：</p>
+    <ul>
+      <li><b>抓取</b>：agent-browser 抓抖音 + B站今日热门（小红书被 IP 风控拦截）</li>
+      <li><b>展示</b>：HTML 仪表板（卡片式 + 平台筛选）+ 交互式 Widget（TOP 5 预览）</li>
+      <li><b>结论</b>：HTML 仪表板 + Widget 组合是内容聚合器最佳展示方式</li>
+    </ul>
+    <p class="src">产出：content-hunter-dashboard.html + content-hunter-dashboard.py</p>
+  </div>
+
+</div>
+
+<div class="footer">
+  由 WorkBuddy 自动生成 · 每日 8:00 · 本版为本地工作区还原版
+</div>
+
+</body>
+</html>
