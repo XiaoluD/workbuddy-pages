@@ -3,139 +3,114 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>每日总结 - 2026-08-22</title>
+<title>每日总结 - 2026-08-24</title>
 </head>
-<body style="margin:0; padding:0; background:#f5f5f7; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; color:#1d1d1f;">
+<body style="margin:0; padding:0; background:#f0f0f5; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;">
 
   <!-- 紫色渐变头部 -->
-  <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 48px 24px; text-align: center; border-top-left-radius: 16px; border-top-right-radius: 16px;">
-    <h1 style="margin:0; font-size:32px; font-weight:700; color:#ffffff;">每日对话总结</h1>
-    <p style="margin:12px 0 0; font-size:17px; color:#ffffff; opacity:0.9;">2026 年 8 月 22 日 · 星期六</p>
+  <div style="background:linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding:44px 24px; text-align:center;">
+    <div style="font-size:32px; font-weight:700; color:#ffffff; letter-spacing:1px;">每日对话总结</div>
+    <div style="font-size:17px; color:#e9e6ff; margin-top:10px;">2026 年 8 月 24 日 · 星期一</div>
   </div>
 
-  <!-- 说明条 -->
-  <div style="margin: 20px 24px 0; padding: 14px 18px; background:#fff7ed; border:1px solid #fed7aa; border-radius:10px; font-size:15px; color:#9a3412; line-height:1.6;">
-    ⚠️ 说明：本日原始自动总结因对话检索索引未收录 8/22 的会话，以下内容根据本地工作区实际产出（memory 日志 + 交付文件）还原，非凭空生成。
+  <!-- 说明提示 -->
+  <div style="max-width:680px; margin:16px auto 0; padding:12px 16px; background:#fff7ed; border:1px solid #fed7aa; border-radius:10px;">
+    <div style="font-size:14px; color:#9a3412; line-height:1.6;">⚠️ 说明：本日原始自动总结因对话检索索引未收录 8/24 的会话，以下内容根据本地工作区实际产出（memory 日志 + 交付文件）还原，非凭空生成。</div>
   </div>
 
-  <!-- 白色卡片主体 -->
-  <div style="max-width: 680px; margin: 0 auto; padding: 24px;">
+  <!-- 主体卡片 -->
+  <div style="max-width:680px; margin:0 auto; padding:24px 16px;">
 
-    <div style="background:#ffffff; border-radius:12px; padding:26px; margin-bottom:18px; border-left:5px solid #667eea; box-shadow:0 1px 4px rgba(0,0,0,0.08);">
-      <div style="margin-bottom:12px;">
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:4px 14px; border-radius:14px; font-size:14px; margin-right:6px; margin-bottom:6px;">学历提升</span>
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:4px 14px; border-radius:14px; font-size:14px; margin-right:6px; margin-bottom:6px;">自考</span>
+    <!-- 卡片 1 -->
+    <div style="background:#ffffff; border-radius:12px; padding:24px; margin-bottom:16px; border-left:5px solid #667eea; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+      <div style="margin-bottom:10px;">
+        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px; margin-right:6px;">工具链</span>
+        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px;">调研</span>
       </div>
-      <h2 style="margin:0 0 12px; font-size:20px; font-weight:700; color:#1d1d1f;">13180《操作系统》答案 OCR 全量校验</h2>
-      <p style="margin:0 0 10px; font-size:17px; line-height:1.7; color:#444;">上一会话误改 2 题答案（Read 对答案图片返回 Content filtered 却误判可读），本次改用 tesseract OCR 全量复核：</p>
-      <ul style="margin:6px 0 4px; padding-left:22px;">
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>方法</b>：tesseract OCR（灰度 + 2x 放大 + 锐化，多 PSM 模式，两列答案需 psm 11）</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>结果</b>：3 套卷修正 4 处（2024-10 回改 Q1/Q7，2026-04 修正 Q18/Q19），2025-04 一致</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>信源</b>：OCR + 02323 交叉 + 教材逻辑三重校验，60 题单选全部定稿</li>
-      </ul>
-      <p style="margin:10px 0 0; font-size:14px; color:#999;">产出：ans_official.py + 台账 HTML + 13180_qbank.json（134 题）</p>
-    </div>
-
-    <div style="background:#ffffff; border-radius:12px; padding:26px; margin-bottom:18px; border-left:5px solid #667eea; box-shadow:0 1px 4px rgba(0,0,0,0.08);">
-      <div style="margin-bottom:12px;">
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:4px 14px; border-radius:14px; font-size:14px; margin-right:6px; margin-bottom:6px;">学历提升</span>
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:4px 14px; border-radius:14px; font-size:14px; margin-right:6px; margin-bottom:6px;">题库对比</span>
-      </div>
-      <h2 style="margin:0 0 12px; font-size:20px; font-weight:700; color:#1d1d1f;">自考题库交叉对比（02323/02325/02326 × 13180）</h2>
-      <ul style="margin:6px 0 4px; padding-left:22px;">
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>重要更正</b>：13180 前身是 02326《操作系统》，非 02323《操作系统概论》</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>02326×13180</b>：原题重现 &lt;1%、母题/考点重复 40-50% → 全新考试体系，考点有延续</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>02325×13015</b>：约 40% 考点重叠、60% 不考（流水线/多处理机）</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>02326 自身</b>：原题 &lt;1%，但 10 类母题模板反复考，换数字换算法名</li>
-      </ul>
-      <p style="margin:10px 0 0; font-size:14px; color:#999;">产出：02326_vs_13180_report.html 等多份对比报告</p>
-    </div>
-
-    <div style="background:#ffffff; border-radius:12px; padding:26px; margin-bottom:18px; border-left:5px solid #667eea; box-shadow:0 1px 4px rgba(0,0,0,0.08);">
-      <div style="margin-bottom:12px;">
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:4px 14px; border-radius:14px; font-size:14px; margin-right:6px; margin-bottom:6px;">学历提升</span>
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:4px 14px; border-radius:14px; font-size:14px; margin-right:6px; margin-bottom:6px;">备考</span>
-      </div>
-      <h2 style="margin:0 0 12px; font-size:20px; font-weight:700; color:#1d1d1f;">2026 年 10 月统考 4 科备考策略定稿</h2>
-      <ul style="margin:6px 0 4px; padding-left:22px;">
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>10/24</b>：15044 马原（易）+ 13013 高级语言程序设计（易）—— 常规备考</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>10/25</b>：13180 操作系统（中）+ 13015 计算机系统原理（难，2023 新教材）</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>结论</b>：从「刷原题」转向「掌握母题解法 + 理解知识点」，13015 分配最多时间（17h）</li>
-      </ul>
-      <p style="margin:10px 0 0; font-size:14px; color:#999;">产出：备考策略要点 + 章节热力图，已固化到备考网页</p>
-    </div>
-
-    <div style="background:#ffffff; border-radius:12px; padding:26px; margin-bottom:18px; border-left:5px solid #667eea; box-shadow:0 1px 4px rgba(0,0,0,0.08);">
-      <div style="margin-bottom:12px;">
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:4px 14px; border-radius:14px; font-size:14px; margin-right:6px; margin-bottom:6px;">学历提升</span>
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:4px 14px; border-radius:14px; font-size:14px; margin-right:6px; margin-bottom:6px;">部署</span>
-      </div>
-      <h2 style="margin:0 0 12px; font-size:20px; font-weight:700; color:#1d1d1f;">备考网页：章节热力图 + 移动端优化 + 链接修复</h2>
-      <ul style="margin:6px 0 4px; padding-left:22px;">
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>热力图</b>：以章节为横轴，纳入大纲重点/难点数 + 真题分值（13180 进程管理 42.3% 为绝对核心）</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>移动端</b>：768px/480px 断点响应式，触控目标 44×44px，卡片单列</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>修复</b>：13015 PDF「六章→五章」改名 404、链接文案「02325 vs 13180→13015」纠正</li>
-      </ul>
-      <p style="margin:10px 0 0; font-size:14px; color:#999;">产出：heatmap_13015.html / heatmap_13180.html，同步 wusi321.top</p>
-    </div>
-
-    <div style="background:#ffffff; border-radius:12px; padding:26px; margin-bottom:18px; border-left:5px solid #667eea; box-shadow:0 1px 4px rgba(0,0,0,0.08);">
-      <div style="margin-bottom:12px;">
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:4px 14px; border-radius:14px; font-size:14px; margin-right:6px; margin-bottom:6px;">自动化</span>
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:4px 14px; border-radius:14px; font-size:14px; margin-right:6px; margin-bottom:6px;">运维</span>
-      </div>
-      <h2 style="margin:0 0 12px; font-size:20px; font-weight:700; color:#1d1d1f;">WorkBuddy 每日签到迁移云服务器</h2>
-      <ul style="margin:6px 0 4px; padding-left:22px;">
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>架构</b>：Mac 本地 automation 暂停，迁移云服务器（与 jc-signer 同模式）</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>调度</b>：cron 5 10 * * * + 0~600s 随机延迟，Server酱失败推送</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>幂等</b>：code=10001 已签到；7 天循环 1600 分/周期；token 约 60 天自动刷新</li>
-      </ul>
-      <p style="margin:10px 0 0; font-size:14px; color:#999;">产出：checkin.py / run_checkin.sh / sync_wb_token.sh + SOP §4.7 重写</p>
-    </div>
-
-    <div style="background:#ffffff; border-radius:12px; padding:26px; margin-bottom:18px; border-left:5px solid #667eea; box-shadow:0 1px 4px rgba(0,0,0,0.08);">
-      <div style="margin-bottom:12px;">
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:4px 14px; border-radius:14px; font-size:14px; margin-right:6px; margin-bottom:6px;">运维</span>
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:4px 14px; border-radius:14px; font-size:14px; margin-right:6px; margin-bottom:6px;">调试</span>
-      </div>
-      <h2 style="margin:0 0 12px; font-size:20px; font-weight:700; color:#1d1d1f;">GLM5.2 frp 隧道调试（延续 8/21）</h2>
-      <ul style="margin:6px 0 4px; padding-left:22px;">
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>根因</b>：对方 frpc 偶发掉线 + WorkBuddy 缓存一致性（重启后首轮通次轮炸）</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>处置</b>：:8001 代理方案停用，URL 改回 :8000 直连 frps，链路恢复</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>待续</b>：多轮 400 需对方在 new-api 后台查拒绝日志</li>
+      <div style="font-size:18px; font-weight:600; color:#1d1d1f; margin-bottom:8px;">OpenCode vs WorkBuddy 平替调研</div>
+      <p style="font-size:17px; line-height:1.7; color:#333; margin:0 0 8px;">Sean 询问类似 WorkBuddy 的第三方工具（重点是 OpenCode），用知乎 CLI 查社区体感：</p>
+      <ul style="margin:6px 0 4px 18px; padding:0;">
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>OpenCode</b>：开源 MIT 终端 AI 编程 Agent，75+ 模型自由接入、免费，GitHub Star 7万+/月活 65万+；定位纯编程副驾，需熟终端</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>WorkBuddy</b>：腾讯全场景办公桌面 Agent，编程只是子集；优势是腾讯生态集成 + hy3 免费模型 + 丝滑部署</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>判断</b>：OpenCode 当编程副驾，WorkBuddy 继续当办公主力，两者非替代关系</li>
       </ul>
     </div>
 
-    <div style="background:#ffffff; border-radius:12px; padding:26px; margin-bottom:18px; border-left:5px solid #667eea; box-shadow:0 1px 4px rgba(0,0,0,0.08);">
-      <div style="margin-bottom:12px;">
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:4px 14px; border-radius:14px; font-size:14px; margin-right:6px; margin-bottom:6px;">工具链</span>
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:4px 14px; border-radius:14px; font-size:14px; margin-right:6px; margin-bottom:6px;">Skill</span>
+    <!-- 卡片 2 -->
+    <div style="background:#ffffff; border-radius:12px; padding:24px; margin-bottom:16px; border-left:5px solid #667eea; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+      <div style="margin-bottom:10px;">
+        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px; margin-right:6px;">投资</span>
+        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px;">研报</span>
       </div>
-      <h2 style="margin:0 0 12px; font-size:20px; font-weight:700; color:#1d1d1f;">Marketplace Skill 批量安装（6 个）</h2>
-      <ul style="margin:6px 0 4px; padding-left:22px;">
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>安装</b>：local-whisper、video-downloader、web-search-exa、skill-scanner、frontend-dev 等 6 个</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>状态</b>：上次 403 配额已恢复，全部安装成功，同名缺失按功能映射并经确认</li>
+      <div style="font-size:18px; font-weight:600; color:#1d1d1f; margin-bottom:8px;">杰创智能（301248.SZ）深度研究</div>
+      <p style="font-size:17px; line-height:1.7; color:#333; margin:0 0 8px;">完成 HTML 深度研报（公司概况 / 业务转型 / 财务数据 / 3 条投资逻辑 / 估值 / 5 大风险）：</p>
+      <ul style="margin:6px 0 4px 18px; padding:0;">
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>核心结论</b>：高弹性转型题材股，算力收入高增长确定，但折旧与利息压力巨大</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>关键矛盾</b>：百亿采购 vs 年收入 2 亿，数量级错配，不适合传统估值框架</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>数据源</b>：westock-data + neodata + 年报/季报 + 国泰海通/天风证券研报</li>
       </ul>
-      <p style="margin:10px 0 0; font-size:14px; color:#999;">产出：6 个 skill 落位 ~/.workbuddy/skills/</p>
     </div>
 
-    <div style="background:#ffffff; border-radius:12px; padding:26px; margin-bottom:18px; border-left:5px solid #667eea; box-shadow:0 1px 4px rgba(0,0,0,0.08);">
-      <div style="margin-bottom:12px;">
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:4px 14px; border-radius:14px; font-size:14px; margin-right:6px; margin-bottom:6px;">工具链</span>
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:4px 14px; border-radius:14px; font-size:14px; margin-right:6px; margin-bottom:6px;">内容</span>
+    <!-- 卡片 3 -->
+    <div style="background:#ffffff; border-radius:12px; padding:24px; margin-bottom:16px; border-left:5px solid #667eea; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+      <div style="margin-bottom:10px;">
+        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px; margin-right:6px;">运维</span>
+        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px;">frp</span>
       </div>
-      <h2 style="margin:0 0 12px; font-size:20px; font-weight:700; color:#1d1d1f;">Content Hunter 内容捕手安装演示</h2>
-      <ul style="margin:6px 0 4px; padding-left:22px;">
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>抓取</b>：content-hunter（v1.1.0）抓抖音 + B站今日热门（小红书被 IP 风控拦截）</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:6px;"><b>展示</b>：HTML 仪表板（卡片式 + 平台筛选）+ 交互式 Widget（TOP 5）</li>
+      <div style="font-size:18px; font-weight:600; color:#1d1d1f; margin-bottom:8px;">GLM 内网转发架构定型（frps 改造）</div>
+      <ul style="margin:6px 0 4px 18px; padding:0;">
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>初版失败</b>：nginx 443 反代 WSS 伪装 → tcpMux 协商异常连不上</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>最终定型</b>：frps vhostHTTPPort=8000 + frpc type=http + customDomains，00:43 重连成功</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>验证</b>：curl 8000/v1/models 返回 401 仅缺鉴权 → 架构生效；端口 7000 + 8000 均 ufw 放行</li>
       </ul>
-      <p style="margin:10px 0 0; font-size:14px; color:#999;">产出：content-hunter-dashboard.html + .py</p>
+    </div>
+
+    <!-- 卡片 4 -->
+    <div style="background:#ffffff; border-radius:12px; padding:24px; margin-bottom:16px; border-left:5px solid #667eea; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+      <div style="margin-bottom:10px;">
+        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px; margin-right:6px;">运维</span>
+        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px;">调试</span>
+      </div>
+      <div style="font-size:18px; font-weight:600; color:#1d1d1f; margin-bottom:8px;">WorkBuddy 客户端请求体 Bug 铁证（pcap 字节级）</div>
+      <ul style="margin:6px 0 4px 18px; padding:0;">
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>现象</b>：长对话每轮整包重发（~440KB→520KB，无上下文压缩），偶发 HTTP 400</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>铁证</b>：CL 声明 547028 实收 530613（缺 16415 字节），JSON Unterminated string，中段断在 read_me 处</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>规律</b>：每条连接第 2 个请求必坏 → 连接复用态 bug</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>同根因</b>：与 MiMo「text is not set」400 同类；OpenCode 同链路正常 → 根因在 WorkBuddy 客户端，已反馈官方</li>
+      </ul>
+    </div>
+
+    <!-- 卡片 5 -->
+    <div style="background:#ffffff; border-radius:12px; padding:24px; margin-bottom:16px; border-left:5px solid #667eea; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+      <div style="margin-bottom:10px;">
+        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px; margin-right:6px;">工具链</span>
+        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px;">配置</span>
+      </div>
+      <div style="font-size:18px; font-weight:600; color:#1d1d1f; margin-bottom:8px;">OpenCode GLM 配置定稿 + WorkBuddy models.json 修复</div>
+      <ul style="margin:6px 0 4px 18px; padding:0;">
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>OpenCode</b>：opencode.jsonc 必须对齐官方 $schema（provider 单数 / npm / options / id 非 modelID），否则整段被丢弃</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>WorkBuddy</b>：models.json 里 GLM5.2 的 id 被误改成显示名 → model not found；id 改回 Qwen3-235B-A22B 后实测均通</li>
+      </ul>
+    </div>
+
+    <!-- 卡片 6 -->
+    <div style="background:#ffffff; border-radius:12px; padding:24px; margin-bottom:16px; border-left:5px solid #667eea; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+      <div style="margin-bottom:10px;">
+        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px; margin-right:6px;">自动化</span>
+        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px;">AI 日报</span>
+      </div>
+      <div style="font-size:18px; font-weight:600; color:#1d1d1f; margin-bottom:8px;">AI 日报自动化第三次执行</div>
+      <ul style="margin:6px 0 4px 18px; padding:0;">
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>投递</b>：ai-daily-report-2026-08-24.html 已发送（queued:true，配额 48/50）</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>去重策略</b>：昨日已推送条目降级为「一句话摘要 + 已推送标注」</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>新专题</b>：本周 AI 安全事件链时间线（沙箱逃逸→失控攻击→监管响应）</li>
+      </ul>
     </div>
 
   </div>
 
   <!-- 底部 -->
-  <div style="text-align:center; padding: 28px 24px 40px; color:#aaa; font-size:14px;">
+  <div style="text-align:center; padding:24px; color:#aaa; font-size:14px;">
     由 WorkBuddy 自动生成 · 每日 8:00
   </div>
 
