@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>每日总结 - 2026-08-24</title>
+<title>每日总结 - 2026-08-26</title>
 </head>
 <body style="margin:0; padding:0; background:#f0f0f5; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;">
 
   <!-- 紫色渐变头部 -->
   <div style="background:linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding:44px 24px; text-align:center;">
     <div style="font-size:32px; font-weight:700; color:#ffffff; letter-spacing:1px;">每日对话总结</div>
-    <div style="font-size:17px; color:#e9e6ff; margin-top:10px;">2026 年 8 月 24 日 · 星期一</div>
+    <div style="font-size:17px; color:#e9e6ff; margin-top:10px;">2026 年 8 月 26 日 · 星期三</div>
   </div>
 
   <!-- 说明提示 -->
   <div style="max-width:680px; margin:16px auto 0; padding:12px 16px; background:#fff7ed; border:1px solid #fed7aa; border-radius:10px;">
-    <div style="font-size:14px; color:#9a3412; line-height:1.6;">⚠️ 说明：本日原始自动总结因对话检索索引未收录 8/24 的会话，以下内容根据本地工作区实际产出（memory 日志 + 交付文件）还原，非凭空生成。</div>
+    <div style="font-size:14px; color:#9a3412; line-height:1.6;">⚠️ 说明：本日原始自动总结因对话检索索引未收录 8/26 的会话，以下内容根据本地工作区实际产出（memory 日志 + 交付文件）还原，非凭空生成。</div>
   </div>
 
   <!-- 主体卡片 -->
@@ -25,85 +25,43 @@
     <div style="background:#ffffff; border-radius:12px; padding:24px; margin-bottom:16px; border-left:5px solid #667eea; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
       <div style="margin-bottom:10px;">
         <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px; margin-right:6px;">工具链</span>
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px;">调研</span>
+        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px; margin-right:6px;">网络排查</span>
+        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px;">结论</span>
       </div>
-      <div style="font-size:18px; font-weight:600; color:#1d1d1f; margin-bottom:8px;">OpenCode vs WorkBuddy 平替调研</div>
-      <p style="font-size:17px; line-height:1.7; color:#333; margin:0 0 8px;">Sean 询问类似 WorkBuddy 的第三方工具（重点是 OpenCode），用知乎 CLI 查社区体感：</p>
+      <div style="font-size:18px; font-weight:600; color:#1d1d1f; margin-bottom:8px;">OpenAI GPT 接入 WorkBuddy 排查收官</div>
+      <p style="font-size:17px; line-height:1.7; color:#333; margin:0 0 8px;">续 8/25 会话，完成 GPT 接入 WorkBuddy 的最终定位与定论：</p>
       <ul style="margin:6px 0 4px 18px; padding:0;">
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>OpenCode</b>：开源 MIT 终端 AI 编程 Agent，75+ 模型自由接入、免费，GitHub Star 7万+/月活 65万+；定位纯编程副驾，需熟终端</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>WorkBuddy</b>：腾讯全场景办公桌面 Agent，编程只是子集；优势是腾讯生态集成 + hy3 免费模型 + 丝滑部署</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>判断</b>：OpenCode 当编程副驾，WorkBuddy 继续当办公主力，两者非替代关系</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>用户决策</b>：明确不再为 API 付费 → gpt-5.6 直连 429 的 API 余额路径彻底关闭</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>mcp.openai.com 死因定位</b>：DNS 解析失败，而 api.openai.com 同环境正常解析到 162.125.32.12（→429 可达）→ 针对 mcp.openai.com 子域名的<b>选择性 DNS 封锁/污染</b>，非全局封锁、非 WorkBuddy 禁用代理</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>用户机器（FlClash）</b>：报 TLS/ECONNRESET 而非 DNS 错 → 连接层在<b>代理出口被 reset</b></li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>最终结论（不花钱前提下）</b>：GPT 进 WorkBuddy 两条路均死；Pro 账号仅 chatgpt.com 网页/官方 App 可用</li>
       </ul>
     </div>
 
     <!-- 卡片 2 -->
     <div style="background:#ffffff; border-radius:12px; padding:24px; margin-bottom:16px; border-left:5px solid #667eea; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
       <div style="margin-bottom:10px;">
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px; margin-right:6px;">投资</span>
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px;">研报</span>
+        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px; margin-right:6px;">方法论</span>
+        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px;">信源规范</span>
       </div>
-      <div style="font-size:18px; font-weight:600; color:#1d1d1f; margin-bottom:8px;">杰创智能（301248.SZ）深度研究</div>
-      <p style="font-size:17px; line-height:1.7; color:#333; margin:0 0 8px;">完成 HTML 深度研报（公司概况 / 业务转型 / 财务数据 / 3 条投资逻辑 / 估值 / 5 大风险）：</p>
+      <div style="font-size:18px; font-weight:600; color:#1d1d1f; margin-bottom:8px;">方法论教训固化（用户强反馈）</div>
       <ul style="margin:6px 0 4px 18px; padding:0;">
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>核心结论</b>：高弹性转型题材股，算力收入高增长确定，但折旧与利息压力巨大</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>关键矛盾</b>：百亿采购 vs 年收入 2 亿，数量级错配，不适合传统估值框架</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>数据源</b>：westock-data + neodata + 年报/季报 + 国泰海通/天风证券研报</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>反对低可信度聚合站当结论</b>：daichong / hlwwhy / denohub 等站不得作为事实依据</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>官方未明确的不编造</b>：中国充值、哪张虚拟卡可用等不得编造或引推广站当事实</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>范围限定</b>：不自行扩展、不绕弯，给完结论就停</li>
       </ul>
     </div>
 
     <!-- 卡片 3 -->
     <div style="background:#ffffff; border-radius:12px; padding:24px; margin-bottom:16px; border-left:5px solid #667eea; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
       <div style="margin-bottom:10px;">
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px; margin-right:6px;">运维</span>
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px;">frp</span>
-      </div>
-      <div style="font-size:18px; font-weight:600; color:#1d1d1f; margin-bottom:8px;">GLM 内网转发架构定型（frps 改造）</div>
-      <ul style="margin:6px 0 4px 18px; padding:0;">
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>初版失败</b>：nginx 443 反代 WSS 伪装 → tcpMux 协商异常连不上</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>最终定型</b>：frps vhostHTTPPort=8000 + frpc type=http + customDomains，00:43 重连成功</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>验证</b>：curl 8000/v1/models 返回 401 仅缺鉴权 → 架构生效；端口 7000 + 8000 均 ufw 放行</li>
-      </ul>
-    </div>
-
-    <!-- 卡片 4 -->
-    <div style="background:#ffffff; border-radius:12px; padding:24px; margin-bottom:16px; border-left:5px solid #667eea; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-      <div style="margin-bottom:10px;">
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px; margin-right:6px;">运维</span>
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px;">调试</span>
-      </div>
-      <div style="font-size:18px; font-weight:600; color:#1d1d1f; margin-bottom:8px;">WorkBuddy 客户端请求体 Bug 铁证（pcap 字节级）</div>
-      <ul style="margin:6px 0 4px 18px; padding:0;">
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>现象</b>：长对话每轮整包重发（~440KB→520KB，无上下文压缩），偶发 HTTP 400</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>铁证</b>：CL 声明 547028 实收 530613（缺 16415 字节），JSON Unterminated string，中段断在 read_me 处</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>规律</b>：每条连接第 2 个请求必坏 → 连接复用态 bug</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>同根因</b>：与 MiMo「text is not set」400 同类；OpenCode 同链路正常 → 根因在 WorkBuddy 客户端，已反馈官方</li>
-      </ul>
-    </div>
-
-    <!-- 卡片 5 -->
-    <div style="background:#ffffff; border-radius:12px; padding:24px; margin-bottom:16px; border-left:5px solid #667eea; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-      <div style="margin-bottom:10px;">
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px; margin-right:6px;">工具链</span>
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px;">配置</span>
-      </div>
-      <div style="font-size:18px; font-weight:600; color:#1d1d1f; margin-bottom:8px;">OpenCode GLM 配置定稿 + WorkBuddy models.json 修复</div>
-      <ul style="margin:6px 0 4px 18px; padding:0;">
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>OpenCode</b>：opencode.jsonc 必须对齐官方 $schema（provider 单数 / npm / options / id 非 modelID），否则整段被丢弃</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>WorkBuddy</b>：models.json 里 GLM5.2 的 id 被误改成显示名 → model not found；id 改回 Qwen3-235B-A22B 后实测均通</li>
-      </ul>
-    </div>
-
-    <!-- 卡片 6 -->
-    <div style="background:#ffffff; border-radius:12px; padding:24px; margin-bottom:16px; border-left:5px solid #667eea; box-shadow:0 1px 3px rgba(0,0,0,0.08);">
-      <div style="margin-bottom:10px;">
         <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px; margin-right:6px;">自动化</span>
-        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px;">AI 日报</span>
+        <span style="display:inline-block; background:#eef0ff; color:#667eea; padding:3px 12px; border-radius:14px; font-size:14px;">签到</span>
       </div>
-      <div style="font-size:18px; font-weight:600; color:#1d1d1f; margin-bottom:8px;">AI 日报自动化第三次执行</div>
+      <div style="font-size:18px; font-weight:600; color:#1d1d1f; margin-bottom:8px;">jc-signer 江宸天街签到 Token 过期</div>
       <ul style="margin:6px 0 4px 18px; padding:0;">
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>投递</b>：ai-daily-report-2026-08-24.html 已发送（queued:true，配额 48/50）</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>去重策略</b>：昨日已推送条目降级为「一句话摘要 + 已推送标注」</li>
-        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;"><b>新专题</b>：本周 AI 安全事件链时间线（沙箱逃逸→失控攻击→监管响应）</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;">8/26 23:50 本地 Mac 签到<b>部分失败</b>：「Token 已过期，请重新登录」</li>
+        <li style="font-size:16px; line-height:1.7; color:#555; margin-bottom:4px;">需重新抓包更新 config/.env 中的 Token；云服务器 cron 与 GitHub Actions 双路仍并行做 A/B 对比</li>
       </ul>
     </div>
 

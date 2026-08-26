@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日总结 - 2026-08-26</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f5f7; color: #1d1d1f; }
+  .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 24px; text-align: center; }
+  .header h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+  .header p { font-size: 16px; opacity: 0.85; }
+  .notice { max-width: 680px; margin: 16px auto 0; padding: 12px 16px; background: #fff7ed; border: 1px solid #fed7aa; border-radius: 10px; color: #9a3412; font-size: 13px; line-height: 1.6; }
+  .container { max-width: 680px; margin: 0 auto; padding: 24px; }
+  .card { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border-left: 4px solid #667eea; }
+  .card h2 { font-size: 18px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px; }
+  .card p { font-size: 15px; line-height: 1.7; color: #555; margin-bottom: 6px; }
+  .card ul { margin: 6px 0 4px 18px; }
+  .card li { font-size: 15px; line-height: 1.7; color: #555; margin-bottom: 4px; }
+  .tag { display: inline-block; background: #eef0ff; color: #667eea; padding: 2px 10px; border-radius: 12px; font-size: 13px; margin-right: 6px; margin-bottom: 6px; }
+  .src { font-size: 12px; color: #999; margin-top: 8px; }
+  .footer { text-align: center; padding: 24px; color: #aaa; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>每日对话总结</h1>
+  <p>2026 年 8 月 26 日 · 星期三</p>
+</div>
+
+<div class="notice">
+  ⚠️ 说明：本日原始自动总结因对话检索索引未收录 8/26 的会话，以下内容根据本地工作区实际产出（memory 日志 + 交付文件）还原，非凭空生成。
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <span class="tag">工具链</span>
+    <span class="tag">网络排查</span>
+    <span class="tag">结论</span>
+    <h2>OpenAI GPT 接入 WorkBuddy 排查收官</h2>
+    <p>续 8/25 会话，完成 GPT 接入 WorkBuddy 的最终定位与定论：</p>
+    <ul>
+      <li><b>用户决策</b>：明确不再为 API 付费（原话「我都说了，我不想再付费了」）→ gpt-5.6 直连 429 的 API 余额路径彻底关闭</li>
+      <li><b>mcp.openai.com 死因定位（实测）</b>：DNS 解析失败，而 api.openai.com 同环境正常解析到 162.125.32.12（→429 可达），对照强烈 → 针对 mcp.openai.com 子域名的<b>选择性 DNS 封锁/污染</b>，非全局 OpenAI 封锁、也非 WorkBuddy 禁用代理</li>
+      <li><b>用户机器（FlClash）现象</b>：报 TLS/ECONNRESET 而非 DNS 错 → 远程 DNS 能解析出名字，但连接层在<b>代理出口被 reset</b>（OpenAI 对代理出口 IP 封锁，或对该 host reset）</li>
+      <li><b>最终结论（不花钱前提下）</b>：GPT 进 WorkBuddy 两条路均死 —— ① API 需余额（不充）② mcp.openai.com OAuth 走 Pro（国内 DNS 污染 + 连接 reset，无解）；Pro 账号仅 chatgpt.com 网页/官方 App 可用</li>
+    </ul>
+    <p class="src">信源：本机实测（socket/dig/curl）+ 用户 FlClash 实测；排除 WorkBuddy 客户端因素（mcp.json 无 per-server 代理绕过）</p>
+  </div>
+
+  <div class="card">
+    <span class="tag">方法论</span>
+    <span class="tag">信源规范</span>
+    <h2>方法论教训固化（用户强反馈）</h2>
+    <p>本次排查中再次强化的协作红线：</p>
+    <ul>
+      <li><b>反对低可信度聚合站当结论</b>：daichong / hlwwhy / denohub 等站不得作为事实依据</li>
+      <li><b>官方未明确的不编造</b>：中国充值、哪张虚拟卡可用等官方未声明的，不得编造或引推广站当事实</li>
+      <li><b>范围限定</b>：不自行扩展、不绕弯，给完结论就停</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <span class="tag">自动化</span>
+    <span class="tag">签到</span>
+    <h2>jc-signer 江宸天街签到 Token 过期</h2>
+    <ul>
+      <li>8/26 23:50 本地 Mac 签到<b>部分失败</b>：「Token 已过期，请重新登录」</li>
+      <li>需重新抓包更新 config/.env 中的 Token；云服务器 cron 与 GitHub Actions 双路仍并行做 A/B 对比</li>
+    </ul>
+    <p class="src">产出：checkin_result.json（08-26 23:50）</p>
+  </div>
+
+</div>
+
+<div class="footer">
+  由 WorkBuddy 自动生成 · 每日 8:00 · 本版为本地工作区还原版
+</div>
+
+</body>
+</html>
